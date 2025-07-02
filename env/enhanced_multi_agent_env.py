@@ -545,20 +545,33 @@ class EnhancedMultiAgentHealthcareEnv(AECEnv):
         return False
     
     def _update_episode_stats(self, agent: str, reward: float):
-        """更新episode统计"""
+        """Update episode statistics"""
         self.episode_stats['total_reward'] += reward
         
+        # Update specific metrics based on agent actions
         if agent == 'doctor':
             self.episode_stats['treatment_effectiveness'] = min(
                 self.episode_stats['treatment_effectiveness'] + reward * 0.1, 1.0
+            )
+            # Doctor contributes to communication quality through medical communication
+            self.episode_stats['communication_quality'] = min(
+                self.episode_stats['communication_quality'] + abs(reward) * 0.08, 1.0
             )
         elif agent == 'patient':
             self.episode_stats['patient_satisfaction'] = min(
                 self.episode_stats['patient_satisfaction'] + reward * 0.2, 1.0
             )
+            # Patient contributes to communication quality through cooperation and feedback
+            self.episode_stats['communication_quality'] = min(
+                self.episode_stats['communication_quality'] + abs(reward) * 0.12, 1.0
+            )
         elif agent == 'insurance':
             self.episode_stats['cost_efficiency'] = min(
                 self.episode_stats['cost_efficiency'] + reward * 0.15, 1.0
+            )
+            # Insurance contributes to communication quality through efficient coordination
+            self.episode_stats['communication_quality'] = min(
+                self.episode_stats['communication_quality'] + abs(reward) * 0.10, 1.0
             )
     
     def render(self):
