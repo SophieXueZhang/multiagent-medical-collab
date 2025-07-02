@@ -1,5 +1,7 @@
 # Multi-Agent Healthcare Collaboration System: Reinforcement Learning-Driven Virtual Medical Assistant
 
+## 🚀 **Live Demo**: [https://multiagent-medical-collab.onrender.com/](https://multiagent-medical-collab.onrender.com/)
+
 ## 🏆 Project Overview
 
 This project successfully implements a multi-agent reinforcement learning system based on real MIMIC-III medical data, simulating collaborative interactions between doctors, patients, and insurance reviewers in healthcare scenarios, aimed at optimizing treatment efficiency and resource allocation.
@@ -171,9 +173,12 @@ python scripts/train_enhanced_agents.py
 python scripts/plot_learning_curves.py
 ```
 
-## 🌐 Web Demo Interface
+## 🌐 Live Demo & Web Interface
 
-The web demo provides a professional, clean interactive experience:
+### 🚀 **Online Demo Available**
+**🌍 Live Demo**: [https://multiagent-medical-collab.onrender.com/](https://multiagent-medical-collab.onrender.com/)
+
+Experience the full system functionality directly in your browser! The online demo provides a professional, clean interactive experience without requiring local setup.
 
 ### Core Features
 - **🏥 Patient Information Panel**: Displays patient details based on real MIMIC-III data
@@ -187,15 +192,30 @@ The web demo provides a professional, clean interactive experience:
 - **🔧 Clean & Focused**: Removed debugging buttons, focusing on core functionality demonstration
 - **📱 Responsive Layout**: Supports device access across different screen sizes
 - **⚡ Real-time Updates**: Delay-free state synchronization implemented with Socket.IO
+- **🌐 Cloud Deployment**: Optimized for production deployment on Render platform
 
-### Access Method
+### Access Methods
+
+#### 🌍 **Online Demo (Recommended)**
+**URL**: [https://multiagent-medical-collab.onrender.com/](https://multiagent-medical-collab.onrender.com/)
+- ✅ **No Setup Required**: Access directly through your browser
+- ✅ **Always Available**: 24/7 accessibility
+- ✅ **Latest Version**: Automatically updated with improvements
+- ✅ **Share Easily**: Send link to colleagues and stakeholders
+
+#### 💻 **Local Development**
 **Address**: `http://localhost:8080`
+```bash
+python web_demo/app.py
+```
 
-**Usage Flow**:
-1. Click "Start New Simulation" to create patient scenario
-2. Use "Auto Step" to observe agent collaboration process
-3. View performance metrics and decision history in real-time
-4. Experience complete 20-step medical collaboration process
+### 🎮 **Usage Flow**
+1. **Access Demo**: Visit the online demo or start local server
+2. **Initialize System**: Wait for "System initializing..." to complete
+3. **Start Simulation**: Click "Start New Simulation" to create patient scenario
+4. **Observe Collaboration**: Use "Auto Step" to watch agent interactions
+5. **Monitor Progress**: View real-time performance metrics and decision history
+6. **Complete Process**: Experience full 20-step medical collaboration workflow
 
 ## �� Training Results
 
@@ -253,7 +273,22 @@ Trained PPO agent showed:
 - Concentrate on core functionality, professional user experience
 - Complete documentation and update
 
-## 🔧 Code Cleaning Results
+## 🚀 Deployment Architecture
+
+### Cloud Infrastructure
+- **Platform**: Render (Free Tier)
+- **Runtime**: Python 3.9.18
+- **Dependencies**: CPU-only optimized (`requirements-cloud.txt`)
+- **Build Process**: Automated from GitHub repository
+- **Performance**: ~3-5 minute cold start, sub-second response time
+
+### Repository Structure
+- **GitHub**: [SophieXueZhang/multiagent-medical-collab](https://github.com/SophieXueZhang/multiagent-medical-collab)
+- **Live Demo**: [https://multiagent-medical-collab.onrender.com/](https://multiagent-medical-collab.onrender.com/)
+- **Documentation**: Complete README and project summary included
+- **CI/CD**: Auto-deployment on push to main branch
+
+## 🔧 Code Cleaning & Optimization Results
 
 ### Deleted Outdated Content
 ```
@@ -270,6 +305,8 @@ Trained PPO agent showed:
 - **Project structure**: More concise, focusing on core functionality
 - **User interface**: Remove debugging elements, improve professionalism
 - **Maintenance cost**: Significantly reduced, facilitating subsequent development
+- **Cloud Deployment**: Production-ready with CPU-only dependencies
+- **Full English Support**: All logs, UI, and documentation in English
 
 ## 🚀 Usage Guide
 
@@ -318,6 +355,14 @@ This project uses MIMIC-III dataset, please comply with related usage license ag
 
 ---
 
-**Project Status**: ✅ **Production Ready** - Include complete data-driven optimization, training analysis, Web demo, and code optimization
+## 🎯 Project Status
 
-**Last Updated**: 2024-12-30 
+**Status**: ✅ **Production Ready & Live**
+- ✅ **Live Demo**: [https://multiagent-medical-collab.onrender.com/](https://multiagent-medical-collab.onrender.com/)
+- ✅ **Complete Implementation**: Data-driven optimization, RL training, interactive demo
+- ✅ **Cloud Deployment**: Production environment on Render platform
+- ✅ **Full English**: All code, logs, documentation, and UI in English
+- ✅ **GitHub Repository**: [multiagent-medical-collab](https://github.com/SophieXueZhang/multiagent-medical-collab)
+
+**Last Updated**: 2025-01-02
+**Deployment Date**: 2025-01-02 
