@@ -520,6 +520,8 @@ if __name__ == '__main__':
         print("=" * 60)
         
         # Start Flask app
-        socketio.run(app, debug=True, host='0.0.0.0', port=8080)
+        import os
+        port = int(os.environ.get('PORT', 8080))
+        socketio.run(app, debug=False, host='0.0.0.0', port=port)
     else:
         print("❌ System initialization failed, unable to start web service") 
