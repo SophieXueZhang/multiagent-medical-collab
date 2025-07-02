@@ -1,0 +1,17 @@
+{
+  "preprocessing_timestamp": "2025-07-01T20:43:16.819649",
+  "total_patients": 100,
+  "total_episodes": 129,
+  "unique_diagnoses": 581,
+  "unique_drugs": 100,
+  "data_quality_score": 0.95,
+  "avg_patient_age": 69.22,
+  "gender_distribution": {
+    "0": 55,
+    "1": 45
+  },
+  "mortality_rate": 1.0,
+  "avg_length_of_stay": 8.775193798449612,
+  "avg_prescriptions_per_episode": 80.6046511627907,
+  "hospital_mortality_rate": 0.31007751937984496
+}

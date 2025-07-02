@@ -1,0 +1,101 @@
+drug_name,frequency,estimated_cost,effectiveness_score,drug_type
+Potassium Chloride,529,25.0,0.7,other
+D5W,439,25.0,0.7,other
+0.9% Sodium Chloride,409,7.5,0.7,other
+NS,362,25.0,0.7,other
+Furosemide,346,25.0,0.8999999999999999,diuretic
+Insulin,300,75.0,0.8999999999999999,diabetes
+Iso-Osmotic Dextrose,265,7.5,0.7,fluid
+5% Dextrose,256,7.5,0.7,fluid
+SW,244,25.0,0.7,other
+Magnesium Sulfate,206,25.0,0.7,other
+Sodium Chloride 0.9%  Flush,206,7.5,0.7,other
+Morphine Sulfate,206,25.0,0.7,other
+Acetaminophen,156,25.0,0.7,other
+Heparin,145,25.0,0.7,other
+Calcium Gluconate,144,25.0,0.7,other
+Metoprolol Tartrate,138,25.0,0.7,other
+Vancomycin,111,25.0,0.7,antibiotic
+Lorazepam,107,25.0,0.7,other
+Bisacodyl,105,25.0,0.7,other
+Metoprolol,101,25.0,0.7,other
+LR,100,50.0,0.7,other
+Senna,97,50.0,0.7,other
+Fentanyl Citrate,93,50.0,0.7,other
+Docusate Sodium,91,15.0,0.7,other
+Sodium Bicarbonate,89,15.0,0.7,other
+Vancomycin HCl,88,50.0,0.7,antibiotic
+Albuterol 0.083% Neb Soln,81,50.0,0.7,other
+Warfarin,78,50.0,0.7,other
+Vial,75,50.0,0.7,other
+Pantoprazole Sodium,74,15.0,0.7,other
+Heparin Sodium,72,15.0,0.7,other
+Pantoprazole,72,50.0,0.7,other
+HYDROmorphone (Dilaudid),64,50.0,0.7,other
+Ipratropium Bromide Neb,64,50.0,0.7,other
+Lactulose,59,50.0,0.7,other
+Aspirin,58,50.0,0.7,other
+Propofol,58,50.0,0.7,other
+Neutra-Phos,56,50.0,0.7,other
+D5 1/2NS,53,50.0,0.7,other
+Levofloxacin,52,50.0,0.7,other
+Potassium Phosphate,51,50.0,0.7,other
+Tacrolimus,47,50.0,0.7,other
+Norepinephrine,47,50.0,0.7,other
+Ondansetron,45,50.0,0.7,other
+0.9% Sodium Chloride (Mini Bag Plus),44,15.0,0.7,other
+Gabapentin,44,50.0,0.7,other
+Lisinopril,44,50.0,0.7,other
+Prednisone,44,50.0,0.7,other
+Midazolam,44,50.0,0.7,other
+Multivitamins,43,50.0,0.7,other
+Haloperidol,41,50.0,0.7,other
+Docusate Sodium (Liquid),41,15.0,0.7,other
+Levothyroxine Sodium,41,15.0,0.7,other
+CefePIME,40,50.0,0.7,other
+Phytonadione,36,50.0,0.7,other
+Famotidine,35,50.0,0.7,other
+Pneumococcal Vac Polyvalent,35,50.0,0.7,other
+PredniSONE,34,50.0,0.7,other
+Amiodarone HCl,33,50.0,0.7,other
+Ciprofloxacin HCl,33,50.0,0.7,other
+Piperacillin-Tazobactam Na,32,50.0,0.7,other
+NS (Mini Bag Plus),31,50.0,0.7,other
+Atorvastatin,31,50.0,0.7,other
+Dexamethasone,30,50.0,0.7,other
+Metronidazole,30,50.0,0.7,other
+Fentanyl Patch,29,50.0,0.7,other
+Dextrose 5%,29,15.0,0.7,fluid
+Acetylcysteine 20%,28,50.0,0.7,other
+D5W (EXCEL BAG),28,50.0,0.7,other
+Dextrose 50%,28,15.0,0.7,fluid
+Chlorhexidine Gluconate 0.12% Oral Rinse,28,50.0,0.7,other
+MetRONIDAZOLE (FLagyl),27,50.0,0.7,other
+Sterile Water,27,15.0,0.7,fluid
+Iso-Osmotic Sodium Chloride,26,15.0,0.7,other
+Meropenem,26,50.0,0.7,other
+Influenza Virus Vaccine,26,50.0,0.7,other
+Hydralazine HCl,25,50.0,0.7,other
+Heparin Flush (10 units/ml),25,50.0,0.7,other
+CeftriaXONE,24,50.0,0.7,other
+1/2 NS,24,50.0,0.7,other
+Heparin Flush CVL  (100 units/ml),24,50.0,0.7,other
+Zolpidem Tartrate,24,50.0,0.7,other
+Albumin 25% (12.5g / 50mL),24,50.0,0.7,other
+Ipratropium Bromide MDI,23,50.0,0.7,other
+Enoxaparin Sodium,23,15.0,0.7,other
+Hydrocortisone Na Succ.,23,50.0,0.7,other
+Ranitidine,22,50.0,0.7,other
+Ciprofloxacin IV,22,50.0,0.7,other
+Miconazole Powder 2%,22,50.0,0.7,other
+Midazolam HCl,22,50.0,0.7,other
+Syringe,21,50.0,0.7,other
+DiphenhydrAMINE,21,50.0,0.7,other
+HydrALAzine,21,50.0,0.7,other
+Fluconazole,21,50.0,0.7,other
+Calcium Carbonate,21,50.0,0.7,other
+Lansoprazole Oral Disintegrating Tab,21,50.0,0.7,other
+Oxycodone-Acetaminophen,20,50.0,0.7,other
+Prochlorperazine,20,50.0,0.7,other
+Metoclopramide,20,50.0,0.7,other
+Amiodarone,20,50.0,0.7,other

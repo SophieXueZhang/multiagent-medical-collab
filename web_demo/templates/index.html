@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Multi-Agent Healthcare Collaboration System - Real-time Demo</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Socket.IO -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.4/socket.io.js"></script>
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin: 20px auto;
+            padding: 30px;
+            max-width: 1400px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .agent-card {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .agent-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .doctor-card {
+            border-color: #007bff;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        }
+        
+        .patient-card {
+            border-color: #28a745;
+            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+        }
+        
+        .insurance-card {
+            border-color: #ffc107;
+            background: linear-gradient(135deg, #fff8e1, #ffecb3);
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        
+        .status-active {
+            background-color: #28a745;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-waiting {
+            background-color: #ffc107;
+        }
+        
+        .status-inactive {
+            background-color: #dc3545;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .performance-metric {
+            text-align: center;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .action-history {
+            max-height: 400px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .action-item {
+            background: white;
+            border-left: 4px solid #007bff;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .patient-info {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        
+        .btn-custom {
+            border-radius: 25px;
+            padding: 10px 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 300px;
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid main-container">
+        <!-- Header Title -->
+        <div class="header">
+            <h1><i class="fas fa-heartbeat"></i> Multi-Agent Healthcare Collaboration System</h1>
+            <p class="mb-0">Intelligent Medical Collaboration Demo Based on Real MIMIC-III Data</p>
+        </div>
+        
+        <!-- System Status and Control -->
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <div class="d-flex align-items-center">
+                    <span class="status-indicator" id="systemStatus"></span>
+                    <span id="statusText">System initializing...</span>
+                </div>
+            </div>
+            <div class="col-md-4 text-end">
+                <button class="btn btn-success btn-custom" id="startBtn" onclick="startSimulation()">
+                    <i class="fas fa-play"></i> Start New Simulation
+                </button>
+                <button class="btn btn-primary btn-custom" id="autoBtn" onclick="autoStep()" disabled>
+                    <i class="fas fa-forward" id="autoIcon"></i> <span id="autoText">Auto Step</span>
+                </button>
+            </div>
+        </div>
+        
+
+        
+        <!-- 患者信息卡片 -->
+        <div class="row mb-4" id="patientSection" style="display: none;">
+            <div class="col-12">
+                <div class="patient-info">
+                    <h4><i class="fas fa-user-injured"></i> 当前患者信息</h4>
+                    <div class="row" id="patientData">
+                        <!-- 患者数据将在这里动态显示 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 主要内容区域 -->
+        <div class="row">
+            <!-- 左侧：智能体状态 -->
+            <div class="col-md-4">
+                <h4><i class="fas fa-users"></i> 智能体状态</h4>
+                
+                <!-- 医生智能体 -->
+                <div class="agent-card doctor-card">
+                    <h5><i class="fas fa-user-md"></i> 医生智能体</h5>
+                    <div class="d-flex justify-content-between">
+                        <span>状态:</span>
+                        <span id="doctorStatus"><span class="status-indicator status-waiting"></span>等待中</span>
+                    </div>
+                    <div class="mt-2">
+                        <small class="text-muted">负责诊断、治疗决策和医疗协调</small>
+                    </div>
+                </div>
+                
+                <!-- 患者智能体 -->
+                <div class="agent-card patient-card">
+                    <h5><i class="fas fa-user"></i> 患者智能体</h5>
+                    <div class="d-flex justify-content-between">
+                        <span>状态:</span>
+                        <span id="patientStatus"><span class="status-indicator status-waiting"></span>等待中</span>
+                    </div>
+                    <div class="mt-2">
+                        <small class="text-muted">报告症状、配合治疗和提供反馈</small>
+                    </div>
+                </div>
+                
+                <!-- 保险智能体 -->
+                <div class="agent-card insurance-card">
+                    <h5><i class="fas fa-shield-alt"></i> 保险智能体</h5>
+                    <div class="d-flex justify-content-between">
+                        <span>状态:</span>
+                        <span id="insuranceStatus"><span class="status-indicator status-waiting"></span>等待中</span>
+                    </div>
+                    <div class="mt-2">
+                        <small class="text-muted">审批治疗方案和控制医疗成本</small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 中间：性能指标 -->
+            <div class="col-md-4">
+                <h4><i class="fas fa-chart-line"></i> 性能指标</h4>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <div class="performance-metric">
+                            <h6><i class="fas fa-heart"></i> 治疗效果</h6>
+                            <h4 id="treatmentEffectiveness">0.0%</h4>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="performance-metric">
+                            <h6><i class="fas fa-dollar-sign"></i> 成本效率</h6>
+                            <h4 id="costEfficiency">0.0%</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-6">
+                        <div class="performance-metric">
+                            <h6><i class="fas fa-smile"></i> 患者满意度</h6>
+                            <h4 id="patientSatisfaction">0.0%</h4>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="performance-metric">
+                            <h6><i class="fas fa-comments"></i> 沟通质量</h6>
+                            <h4 id="communicationQuality">0.0%</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 性能图表 -->
+                <div class="chart-container mt-3">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- 右侧：动作历史 -->
+            <div class="col-md-4">
+                <h4><i class="fas fa-history"></i> 动作历史</h4>
+                <div class="d-flex justify-content-between mb-2">
+                    <small class="text-muted">步骤: <span id="currentStep">0</span> / <span id="maxSteps">20</span></small>
+                    <small class="text-muted">进度: <span id="progress">0%</span></small>
+                </div>
+                <div class="progress mb-3">
+                    <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                </div>
+                <div class="action-history" id="actionHistory">
+                    <p class="text-muted text-center">暂无动作记录</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部：详细信息 -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5><i class="fas fa-info-circle"></i> 系统说明</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>🏥 系统特性</h6>
+                                <ul>
+                                    <li>基于真实MIMIC-III医疗数据集</li>
+                                    <li>三方智能体协作（医生、患者、保险）</li>
+                                    <li>数据驱动的奖励函数优化</li>
+                                    <li>实时交互和性能监控</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>🎯 演示说明</h6>
+                                <ul>
+                                    <li>点击"开始新模拟"创建患者场景</li>
+                                    <li>使用"自动步进"观察智能体协作</li>
+                                    <li>实时监控治疗效果和成本控制</li>
+                                    <li>查看详细的动作历史和性能指标</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // 全局变量声明和初始化
+        var socket;
+        var performanceChart = null;
+        var simulationActive = false;
+        
+        console.log('📋 JavaScript代码开始加载...');
+        console.log('📅 页面加载时间:', new Date().toLocaleTimeString());
+        
+        // 安全初始化Socket.IO
+        try {
+            socket = io();
+            console.log('🔗 Socket.IO初始化成功');
+        } catch (error) {
+            console.error('❌ Socket.IO初始化失败:', error);
+            socket = null;
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                console.log('🚀 页面初始化开始');
+                
+                // 确保全局变量已正确初始化
+                if (typeof simulationActive === 'undefined') {
+                    window.simulationActive = false;
+                    simulationActive = false;
+                }
+                console.log('📊 全局变量状态:', {simulationActive: simulationActive});
+                
+                // 初始化性能图表
+                initializePerformanceChart();
+                
+                // 初始状态设置
+                const statusIndicator = document.getElementById('systemStatus');
+                const statusText = document.getElementById('statusText');
+                if (statusIndicator) statusIndicator.className = 'status-indicator status-inactive';
+                if (statusText) statusText.textContent = '检查中...';
+                
+                // 初始化控制按钮状态
+                updateControls();
+                
+                // 立即检查状态
+                setTimeout(() => {
+                    console.log('🔍 开始首次状态检查');
+                    checkSystemStatus();
+                }, 500);
+                
+                // 定期检查系统状态
+                setInterval(checkSystemStatus, 5000);
+                
+                console.log('✅ 页面初始化完成');
+            } catch (error) {
+                console.error('❌ 页面初始化失败:', error);
+                alert('页面初始化出现错误，请刷新页面重试');
+            }
+        });
+        
+
+        
+
+        
+
+        
+
+         
+
+         
+
+          
+
+          
+          // Socket.IO 事件处理
+        socket.on('connect', function() {
+            console.log('已连接到服务器');
+        });
+        
+        socket.on('simulation_started', function(data) {
+            console.log('模拟开始', data);
+            updateSimulationState(data);
+        });
+        
+        socket.on('action_executed', function(data) {
+            console.log('动作执行', data);
+            addActionToHistory(data);
+        });
+        
+        socket.on('simulation_completed', function(data) {
+            console.log('模拟完成', data);
+            simulationActive = false;
+            updateControls();
+            showCompletionMessage();
+        });
+        
+        // 初始化性能图表
+        function initializePerformanceChart() {
+            const ctx = document.getElementById('performanceChart').getContext('2d');
+            performanceChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [{
+                        label: '治疗效果',
+                        data: [],
+                        borderColor: '#007bff',
+                        backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                        fill: true
+                    }, {
+                        label: '成本效率',
+                        data: [],
+                        borderColor: '#28a745',
+                        backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                        fill: true
+                    }, {
+                        label: '患者满意度',
+                        data: [],
+                        borderColor: '#ffc107',
+                        backgroundColor: 'rgba(255, 193, 7, 0.1)',
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 1
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top'
+                        }
+                    }
+                }
+            });
+        }
+        
+        // 检查系统状态
+        function checkSystemStatus() {
+            console.log('检查系统状态...');
+            fetch('/api/status', {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Cache-Control': 'no-cache'
+                }
+            })
+                .then(response => {
+                    console.log('状态API响应状态:', response.status);
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    console.log('状态API原始响应:', text);
+                    if (!text || text.trim() === '') {
+                        throw new Error('API返回空响应');
+                    }
+                    
+                    let data;
+                    try {
+                        data = JSON.parse(text);
+                    } catch (parseError) {
+                        console.error('状态API JSON解析错误:', parseError);
+                        throw new Error('API响应格式无效');
+                    }
+                    
+                    console.log('状态数据:', data);
+                    updateSystemStatus(data);
+                })
+                .catch(error => {
+                    console.error('状态检查失败:', error);
+                    // 显示错误状态
+                    const statusIndicator = document.getElementById('systemStatus');
+                    const statusText = document.getElementById('statusText');
+                    if (statusIndicator && statusText) {
+                        statusIndicator.className = 'status-indicator status-inactive';
+                        statusText.textContent = '连接失败';
+                    }
+                });
+        }
+        
+        // 更新系统状态
+        function updateSystemStatus(status) {
+            try {
+                console.log('🔄 更新系统状态:', status);
+                
+                // 确保变量已初始化
+                if (typeof simulationActive === 'undefined') {
+                    simulationActive = false;
+                }
+                
+                const statusIndicator = document.getElementById('systemStatus');
+                const statusText = document.getElementById('statusText');
+                const startBtn = document.getElementById('startBtn');
+                
+                if (status && typeof status.environment_ready !== 'undefined') {
+                    if (status.environment_ready) {
+                        if (statusIndicator) statusIndicator.className = 'status-indicator status-active';
+                        if (statusText) statusText.textContent = '系统就绪';
+                        if (startBtn) startBtn.disabled = false;
+                        console.log('✅ 系统就绪');
+                    } else {
+                        if (statusIndicator) statusIndicator.className = 'status-indicator status-inactive';
+                        if (statusText) statusText.textContent = '系统未就绪';
+                        if (startBtn) startBtn.disabled = true;
+                        console.log('❌ 系统未就绪');
+                    }
+                    
+                    // 更新模拟状态
+                    const wasActive = simulationActive;
+                    simulationActive = status.simulation_active || false;
+                    
+                    console.log('📊 模拟状态:', {
+                        wasActive: wasActive,
+                        now: simulationActive,
+                        fromAPI: status.simulation_active
+                    });
+                    
+                    if (wasActive !== simulationActive) {
+                        console.log('🔄 模拟状态变化，更新控制按钮');
+                        updateControls();
+                    }
+                } else {
+                    console.error('❌ 无效的状态数据:', status);
+                }
+            } catch (error) {
+                console.error('❌ 更新系统状态失败:', error);
+            }
+        }
+        
+        // 开始模拟
+        function startSimulation() {
+            console.log('开始模拟...');
+            fetch('/api/start_simulation', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('模拟响应:', data);
+                if (data.success) {
+                    updateSimulationState(data.simulation);
+                    simulationActive = true;
+                    updateControls();
+                    console.log('模拟启动成功，simulationActive:', simulationActive);
+                } else {
+                    alert('启动模拟失败: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('启动模拟失败:', error);
+            });
+        }
+        
+        // 自动步进
+        function autoStep() {
+            try {
+                // 确保变量已初始化
+                if (typeof simulationActive === 'undefined') {
+                    simulationActive = false;
+                }
+                
+                console.log('🚀 自动步进开始，当前状态:', {simulationActive: simulationActive});
+                
+                if (!simulationActive) {
+                    alert('请先开始新模拟！');
+                    return;
+                }
+            } catch (error) {
+                console.error('❌ 自动步进检查失败:', error);
+                alert('自动步进功能出现错误，请刷新页面重试');
+                return;
+            }
+            
+            // 更新按钮状态为正在处理
+            const autoBtn = document.getElementById('autoBtn');
+            const autoIcon = document.getElementById('autoIcon');
+            const autoText = document.getElementById('autoText');
+            
+            autoBtn.disabled = true;
+            autoIcon.className = 'fas fa-spinner fa-spin';
+            autoText.textContent = '执行中...';
+            
+            fetch('/api/execute_action', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ agent: 'auto' })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('自动步进响应:', data);
+                if (data.success) {
+                    addActionToHistory(data.action_record);
+                    updatePerformanceMetrics(data.performance);
+                    updateProgress();
+                    
+                    if (!data.active) {
+                        simulationActive = false;
+                        updateControls();
+                        showCompletionMessage();
+                    }
+                } else {
+                    alert('执行动作失败: ' + data.error);
+                    console.error('动作执行错误:', data.error);
+                }
+            })
+            .catch(error => {
+                console.error('执行动作失败:', error);
+                alert('网络错误，请重试');
+            })
+            .finally(() => {
+                try {
+                    // 恢复按钮状态
+                    if (autoIcon) autoIcon.className = 'fas fa-forward';
+                    if (autoText) autoText.textContent = '自动步进';
+                    if (autoBtn && typeof simulationActive !== 'undefined') {
+                        autoBtn.disabled = !simulationActive;
+                    }
+                    console.log('🔄 自动步进按钮状态已恢复');
+                } catch (error) {
+                    console.error('❌ 按钮状态恢复失败:', error);
+                }
+            });
+        }
+        
+        // 更新模拟状态
+        function updateSimulationState(simulation) {
+            // 显示患者信息
+            if (simulation.patient) {
+                displayPatientInfo(simulation.patient);
+                document.getElementById('patientSection').style.display = 'block';
+            }
+            
+            // 重置历史记录
+            document.getElementById('actionHistory').innerHTML = '<p class="text-muted text-center">模拟开始...</p>';
+            
+            // 重置性能指标
+            updatePerformanceMetrics(simulation.performance);
+            
+            // 重置进度
+            document.getElementById('currentStep').textContent = simulation.step;
+            document.getElementById('maxSteps').textContent = simulation.max_steps;
+            updateProgress();
+        }
+        
+        // 显示患者信息
+        function displayPatientInfo(patient) {
+            const patientData = document.getElementById('patientData');
+            patientData.innerHTML = `
+                <div class="col-md-3">
+                    <strong>患者ID:</strong> ${patient.id}<br>
+                    <strong>年龄:</strong> ${patient.age}岁<br>
+                    <strong>性别:</strong> ${patient.gender}
+                </div>
+                <div class="col-md-3">
+                    <strong>主要诊断:</strong> ${patient.diagnosis}<br>
+                    <strong>严重程度:</strong> ${patient.severity}/5.0<br>
+                    <strong>紧急程度:</strong> ${patient.urgency}/5
+                </div>
+                <div class="col-md-3">
+                    <strong>死亡风险:</strong> ${patient.mortality_risk}<br>
+                    <strong>预估成本:</strong> ${patient.estimated_cost}<br>
+                    <strong>保险覆盖:</strong> ${patient.insurance_coverage}
+                </div>
+                <div class="col-md-3">
+                    <strong>当前治疗:</strong> ${patient.treatments}种<br>
+                    <strong>症状数量:</strong> ${Object.keys(patient.symptoms).length}个
+                </div>
+            `;
+        }
+        
+        // 添加动作到历史记录
+        function addActionToHistory(actionRecord) {
+            const historyContainer = document.getElementById('actionHistory');
+            
+            // 如果是第一个动作，清空初始消息
+            if (historyContainer.innerHTML.includes('暂无动作记录') || historyContainer.innerHTML.includes('模拟开始')) {
+                historyContainer.innerHTML = '';
+            }
+            
+            const actionItem = document.createElement('div');
+            actionItem.className = 'action-item';
+            
+            const agentColors = {
+                'doctor': '#007bff',
+                'patient': '#28a745',
+                'insurance': '#ffc107'
+            };
+            
+            const agentIcons = {
+                'doctor': 'fas fa-user-md',
+                'patient': 'fas fa-user',
+                'insurance': 'fas fa-shield-alt'
+            };
+            
+            actionItem.style.borderLeftColor = agentColors[actionRecord.agent] || '#6c757d';
+            
+            actionItem.innerHTML = `
+                <div class="d-flex justify-content-between">
+                    <strong><i class="${agentIcons[actionRecord.agent]}"></i> ${getAgentName(actionRecord.agent)}</strong>
+                    <small class="text-muted">${actionRecord.timestamp}</small>
+                </div>
+                <div class="mt-1">
+                    <small>${actionRecord.description}</small>
+                </div>
+                <div class="mt-1">
+                    <span class="badge bg-${actionRecord.reward > 0 ? 'success' : 'warning'}">
+                        奖励: ${actionRecord.reward.toFixed(3)}
+                    </span>
+                </div>
+            `;
+            
+            historyContainer.appendChild(actionItem);
+            historyContainer.scrollTop = historyContainer.scrollHeight;
+            
+            // 更新步骤计数
+            document.getElementById('currentStep').textContent = actionRecord.step + 1;
+            updateProgress();
+        }
+        
+        // 更新性能指标
+        function updatePerformanceMetrics(performance) {
+            document.getElementById('treatmentEffectiveness').textContent = (performance.treatment_effectiveness * 100).toFixed(1) + '%';
+            document.getElementById('costEfficiency').textContent = (performance.cost_efficiency * 100).toFixed(1) + '%';
+            document.getElementById('patientSatisfaction').textContent = (performance.patient_satisfaction * 100).toFixed(1) + '%';
+            document.getElementById('communicationQuality').textContent = (performance.communication_quality * 100).toFixed(1) + '%';
+            
+            // 更新图表
+            if (performanceChart) {
+                const stepLabel = `步骤 ${document.getElementById('currentStep').textContent}`;
+                performanceChart.data.labels.push(stepLabel);
+                performanceChart.data.datasets[0].data.push(performance.treatment_effectiveness);
+                performanceChart.data.datasets[1].data.push(performance.cost_efficiency);
+                performanceChart.data.datasets[2].data.push(performance.patient_satisfaction);
+                
+                // 限制数据点数量
+                if (performanceChart.data.labels.length > 10) {
+                    performanceChart.data.labels.shift();
+                    performanceChart.data.datasets.forEach(dataset => dataset.data.shift());
+                }
+                
+                performanceChart.update();
+            }
+        }
+        
+        // 更新进度条
+        function updateProgress() {
+            const currentStep = parseInt(document.getElementById('currentStep').textContent);
+            const maxSteps = parseInt(document.getElementById('maxSteps').textContent);
+            const progress = (currentStep / maxSteps) * 100;
+            
+            document.getElementById('progress').textContent = progress.toFixed(0) + '%';
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+        
+        // 更新控制按钮
+        function updateControls() {
+            try {
+                // 确保变量已初始化
+                if (typeof simulationActive === 'undefined') {
+                    simulationActive = false;
+                }
+                
+                const autoBtn = document.getElementById('autoBtn');
+                const startBtn = document.getElementById('startBtn');
+                
+                if (autoBtn) {
+                    autoBtn.disabled = !simulationActive;
+                }
+                
+                if (startBtn) {
+                    if (simulationActive) {
+                        startBtn.disabled = true;
+                        startBtn.textContent = '🔄 模拟进行中...';
+                    } else {
+                        startBtn.disabled = false;
+                        startBtn.innerHTML = '<i class="fas fa-play"></i> 开始新模拟';
+                    }
+                }
+                
+                console.log('✅ 控制按钮状态更新:', {
+                    simulationActive: simulationActive,
+                    autoDisabled: autoBtn ? autoBtn.disabled : '未找到按钮'
+                });
+            } catch (error) {
+                console.error('❌ 控制按钮更新失败:', error);
+            }
+        }
+        
+        // 获取智能体名称
+        function getAgentName(agent) {
+            const names = {
+                'doctor': '医生',
+                'patient': '患者',
+                'insurance': '保险审核员'
+            };
+            return names[agent] || agent;
+        }
+        
+        // 显示完成消息
+        function showCompletionMessage() {
+            const historyContainer = document.getElementById('actionHistory');
+            const completionMessage = document.createElement('div');
+            completionMessage.className = 'alert alert-success mt-2';
+            completionMessage.innerHTML = '<i class="fas fa-check-circle"></i> 模拟完成！';
+            historyContainer.appendChild(completionMessage);
+        }
+    </script>
+</body>
+</html> 

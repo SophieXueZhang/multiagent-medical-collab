@@ -1,0 +1,39 @@
+{
+  "benchmarks": {
+    "avg_treatment_effectiveness": 0.7040000000000001,
+    "target_treatment_effectiveness": 0.85,
+    "avg_treatment_cost": 18275.252525252527,
+    "target_cost_reduction": 0.15,
+    "avg_length_of_stay": 8.775193798449612,
+    "target_los_reduction": 0.2,
+    "avg_mortality_rate": 0.31007751937984496,
+    "target_mortality_reduction": 0.25,
+    "avg_severity": 1.5740103270223753,
+    "avg_complexity": 1.0154905335628228,
+    "avg_insurance_coverage": 0.8114478114478114,
+    "target_insurance_optimization": 0.9
+  },
+  "optimized_weights": {
+    "treatment_success": 0.17,
+    "treatment_efficiency": 0.05,
+    "symptom_improvement": 0.1,
+    "mortality_risk_reduction": 0.2,
+    "complication_prevention": 0.05,
+    "treatment_appropriateness": 0.05,
+    "cost_optimization": 0.11,
+    "resource_utilization": 0.05,
+    "length_of_stay_optimization": 0.07,
+    "communication_efficiency": 0.03,
+    "decision_speed": 0.04,
+    "information_sharing": 0.03,
+    "insurance_optimization": 0.03,
+    "approval_efficiency": 0.02,
+    "delay_penalty": 0.1,
+    "error_penalty": 0.2
+  },
+  "optimization_metadata": {
+    "data_source": "MIMIC-III",
+    "optimization_strategy": "data_driven_medical_priorities",
+    "creation_time": "2025-07-01T20:47:34.716263"
+  }
+}

@@ -1,0 +1,555 @@
+[
+  {
+    "subject_id": 62489,
+    "age": 98,
+    "gender": 1,
+    "primary_diagnosis": "49390",
+    "diagnosis_codes": [
+      "49390"
+    ],
+    "severity_score": 1.5,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.22001572083672233,
+      "fatigue": 0.38625579901499674,
+      "discomfort": 0.02227221201235889,
+      "weakness": 0.21470884175255894,
+      "general_malaise": 0.10486427917023021
+    },
+    "current_treatments": [
+      "Morphine Sulfate"
+    ],
+    "treatment_effectiveness": 0.5344079073157605,
+    "estimated_treatment_cost": 7525.0,
+    "insurance_coverage": 0.7909319850712313,
+    "length_of_stay_prediction": 25.972405170743663,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 49539,
+    "age": 96,
+    "gender": 0,
+    "primary_diagnosis": "53081",
+    "diagnosis_codes": [
+      "53081"
+    ],
+    "severity_score": 1.0,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.058824358634992455,
+      "fatigue": 0.07818282477365443,
+      "discomfort": 0.0,
+      "weakness": 0.16514076293246788,
+      "general_malaise": 0.0
+    },
+    "current_treatments": [
+      "Calcium Gluconate",
+      "Metoprolol"
+    ],
+    "treatment_effectiveness": 0.5568296977299658,
+    "estimated_treatment_cost": 7550.0,
+    "insurance_coverage": 0.8170091304436592,
+    "length_of_stay_prediction": 22.92998303815687,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 40257,
+    "age": 62,
+    "gender": 0,
+    "primary_diagnosis": "1970",
+    "diagnosis_codes": [
+      "1970"
+    ],
+    "severity_score": 1.5,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.17437331727736705,
+      "fatigue": 0.0,
+      "discomfort": 0.035825263434379584,
+      "weakness": 0.14028814171580428,
+      "general_malaise": 0.0
+    },
+    "current_treatments": [
+      "Heparin",
+      "Calcium Gluconate"
+    ],
+    "treatment_effectiveness": 0.8335215981245787,
+    "estimated_treatment_cost": 7550.0,
+    "insurance_coverage": 0.7868302945145134,
+    "length_of_stay_prediction": 16.679858939346772,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 15525,
+    "age": 98,
+    "gender": 0,
+    "primary_diagnosis": "570",
+    "diagnosis_codes": [
+      "570"
+    ],
+    "severity_score": 3.5,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.46365098505119895,
+      "fatigue": 0.43776117974856005,
+      "discomfort": 0.2445241020731013,
+      "weakness": 0.27102585185175404,
+      "general_malaise": 0.21729993231761524
+    },
+    "current_treatments": [
+      "Furosemide"
+    ],
+    "treatment_effectiveness": 0.5336148355074588,
+    "estimated_treatment_cost": 7525.0,
+    "insurance_coverage": 0.8351194381705026,
+    "length_of_stay_prediction": 33.7868111154959,
+    "urgency_level": 3
+  },
+  {
+    "subject_id": 62594,
+    "age": 70,
+    "gender": 1,
+    "primary_diagnosis": "E8495",
+    "diagnosis_codes": [
+      "E8495"
+    ],
+    "severity_score": 1.5,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.2299951333237829,
+      "fatigue": 0.057909106889313486,
+      "discomfort": 0.18935985082913115,
+      "weakness": 0.05266984799730899,
+      "general_malaise": 0.0
+    },
+    "current_treatments": [
+      "Vancomycin",
+      "Furosemide"
+    ],
+    "treatment_effectiveness": 0.6675072396487021,
+    "estimated_treatment_cost": 7550.0,
+    "insurance_coverage": 0.844673125985045,
+    "length_of_stay_prediction": 14.482088408394272,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 27543,
+    "age": 76,
+    "gender": 0,
+    "primary_diagnosis": "E9504",
+    "diagnosis_codes": [
+      "E9504"
+    ],
+    "severity_score": 1.5,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.14691298481059123,
+      "fatigue": 0.409577118700778,
+      "discomfort": 0.0947907870396923,
+      "weakness": 0.11086098415781828,
+      "general_malaise": 0.2782481117061564
+    },
+    "current_treatments": [
+      "Sodium Chloride 0.9%  Flush"
+    ],
+    "treatment_effectiveness": 0.5024531156147255,
+    "estimated_treatment_cost": 7507.5,
+    "insurance_coverage": 0.867101346732804,
+    "length_of_stay_prediction": 22.573141584524414,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 41275,
+    "age": 64,
+    "gender": 1,
+    "primary_diagnosis": "42731",
+    "diagnosis_codes": [
+      "42731"
+    ],
+    "severity_score": 1.0,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.1929003923612504,
+      "fatigue": 0.12178207880760021,
+      "discomfort": 0.0,
+      "weakness": 0.0,
+      "general_malaise": 0.17132515212358884
+    },
+    "current_treatments": [
+      "5% Dextrose"
+    ],
+    "treatment_effectiveness": 0.5606118876907964,
+    "estimated_treatment_cost": 7507.5,
+    "insurance_coverage": 0.7143850149992801,
+    "length_of_stay_prediction": 11.633898007496622,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 39616,
+    "age": 97,
+    "gender": 1,
+    "primary_diagnosis": "3970",
+    "diagnosis_codes": [
+      "3970"
+    ],
+    "severity_score": 1.5,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.1334062629459167,
+      "fatigue": 0.11910769713742614,
+      "discomfort": 0.1202065572905948,
+      "weakness": 0.11871096141420687,
+      "general_malaise": 0.0
+    },
+    "current_treatments": [
+      "Furosemide"
+    ],
+    "treatment_effectiveness": 0.6174459923759962,
+    "estimated_treatment_cost": 7525.0,
+    "insurance_coverage": 0.6587953582608274,
+    "length_of_stay_prediction": 28.34229240562877,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 29148,
+    "age": 70,
+    "gender": 0,
+    "primary_diagnosis": "4019",
+    "diagnosis_codes": [
+      "4019"
+    ],
+    "severity_score": 1.0,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "headache": 0.23512827332721103,
+      "dizziness": 0.0,
+      "chest_pain": 0.0,
+      "fatigue": 0.0,
+      "shortness_of_breath": 0.30098343033415415
+    },
+    "current_treatments": [
+      "Midazolam HCl"
+    ],
+    "treatment_effectiveness": 0.4986642784704614,
+    "estimated_treatment_cost": 7550.0,
+    "insurance_coverage": 0.7002731448340203,
+    "length_of_stay_prediction": 14.955151291079117,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 65290,
+    "age": 69,
+    "gender": 0,
+    "primary_diagnosis": "51881",
+    "diagnosis_codes": [
+      "51881"
+    ],
+    "severity_score": 3.0,
+    "mortality_risk": 0.4,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.3310455930749801,
+      "fatigue": 0.2741638535792082,
+      "discomfort": 0.1918864637123096,
+      "weakness": 0.03546688212043278,
+      "general_malaise": 0.19091280187782533
+    },
+    "current_treatments": [
+      "Magnesium Sulfate"
+    ],
+    "treatment_effectiveness": 0.45010517032267855,
+    "estimated_treatment_cost": 7525.0,
+    "insurance_coverage": 0.805984283593813,
+    "length_of_stay_prediction": 21.77164426292845,
+    "urgency_level": 2
+  },
+  {
+    "subject_id": 92550,
+    "age": 91,
+    "gender": 0,
+    "primary_diagnosis": "0389",
+    "diagnosis_codes": [
+      "0389"
+    ],
+    "severity_score": 1.0,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.19152789743984056,
+      "fatigue": 0.18813359738904806,
+      "discomfort": 0.007991443928110326,
+      "weakness": 0.10215115856921195,
+      "general_malaise": 0.09085485257149696
+    },
+    "current_treatments": [
+      "0.9% Sodium Chloride",
+      "Potassium Chloride"
+    ],
+    "treatment_effectiveness": 0.31150589883256835,
+    "estimated_treatment_cost": 7532.5,
+    "insurance_coverage": 0.9169831271965242,
+    "length_of_stay_prediction": 16.954581314573872,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 91735,
+    "age": 98,
+    "gender": 0,
+    "primary_diagnosis": "5180",
+    "diagnosis_codes": [
+      "5180"
+    ],
+    "severity_score": 1.5,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.15139270031837057,
+      "fatigue": 0.19867153706270643,
+      "discomfort": 0.08803686362357013,
+      "weakness": 0.06603706377652699,
+      "general_malaise": 0.1515402668425697
+    },
+    "current_treatments": [
+      "Metoprolol",
+      "Furosemide"
+    ],
+    "treatment_effectiveness": 0.4755223166914285,
+    "estimated_treatment_cost": 7550.0,
+    "insurance_coverage": 0.95,
+    "length_of_stay_prediction": 23.380468448931502,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 69010,
+    "age": 77,
+    "gender": 0,
+    "primary_diagnosis": "45829",
+    "diagnosis_codes": [
+      "45829"
+    ],
+    "severity_score": 1.5,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.11185741205605548,
+      "fatigue": 0.24331428339492003,
+      "discomfort": 0.0,
+      "weakness": 0.10131270781322724,
+      "general_malaise": 0.10797723298438086
+    },
+    "current_treatments": [
+      "NS",
+      "0.9% Sodium Chloride"
+    ],
+    "treatment_effectiveness": 0.5024313944890337,
+    "estimated_treatment_cost": 7532.5,
+    "insurance_coverage": 0.7079805939107745,
+    "length_of_stay_prediction": 22.657240303109816,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 84117,
+    "age": 57,
+    "gender": 1,
+    "primary_diagnosis": "5854",
+    "diagnosis_codes": [
+      "5854"
+    ],
+    "severity_score": 1.5,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "nausea": 0.2553766378659703,
+      "vomiting": 0.11554969216619465,
+      "swelling": 0.2551812338745789,
+      "fatigue": 0.37451017084510096,
+      "urination_changes": 0.32323378882945464
+    },
+    "current_treatments": [
+      "Calcium Gluconate",
+      "5% Dextrose"
+    ],
+    "treatment_effectiveness": 0.43287013393467183,
+    "estimated_treatment_cost": 7532.5,
+    "insurance_coverage": 0.8533817383262985,
+    "length_of_stay_prediction": 15.709465813700998,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 73132,
+    "age": 94,
+    "gender": 1,
+    "primary_diagnosis": "4019",
+    "diagnosis_codes": [
+      "4019"
+    ],
+    "severity_score": 1.0,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "headache": 0.16271860246088216,
+      "dizziness": 0.14639765284561698,
+      "chest_pain": 0.05276634338338232,
+      "fatigue": 0.0,
+      "shortness_of_breath": 0.0744677813190316
+    },
+    "current_treatments": [
+      "Pantoprazole Sodium",
+      "0.9% Sodium Chloride (Mini Bag Plus)"
+    ],
+    "treatment_effectiveness": 0.6492124514860738,
+    "estimated_treatment_cost": 7530.0,
+    "insurance_coverage": 0.905098478743521,
+    "length_of_stay_prediction": 22.93959648132677,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 90227,
+    "age": 64,
+    "gender": 0,
+    "primary_diagnosis": "5859",
+    "diagnosis_codes": [
+      "5859"
+    ],
+    "severity_score": 2.0,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "nausea": 0.27392847060461845,
+      "vomiting": 0.18355688917260196,
+      "swelling": 0.10363947431957893,
+      "fatigue": 0.2104137956055288,
+      "urination_changes": 0.2512234258522049
+    },
+    "current_treatments": [
+      "Morphine Sulfate"
+    ],
+    "treatment_effectiveness": 0.6165996195616875,
+    "estimated_treatment_cost": 7525.0,
+    "insurance_coverage": 0.5,
+    "length_of_stay_prediction": 14.567910367414456,
+    "urgency_level": 2
+  },
+  {
+    "subject_id": 25079,
+    "age": 71,
+    "gender": 1,
+    "primary_diagnosis": "42731",
+    "diagnosis_codes": [
+      "42731"
+    ],
+    "severity_score": 1.0,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.0,
+      "fatigue": 0.0,
+      "discomfort": 0.017863139153731743,
+      "weakness": 0.0,
+      "general_malaise": 0.12989098555426748
+    },
+    "current_treatments": [
+      "Magnesium Sulfate",
+      "5% Dextrose"
+    ],
+    "treatment_effectiveness": 0.4619841038887153,
+    "estimated_treatment_cost": 7532.5,
+    "insurance_coverage": 0.95,
+    "length_of_stay_prediction": 14.891573094548521,
+    "urgency_level": 1
+  },
+  {
+    "subject_id": 79915,
+    "age": 73,
+    "gender": 0,
+    "primary_diagnosis": "5849",
+    "diagnosis_codes": [
+      "5849"
+    ],
+    "severity_score": 3.0,
+    "mortality_risk": 0.4,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "nausea": 0.17453719211934948,
+      "vomiting": 0.30239011113263564,
+      "swelling": 0.534531128957209,
+      "fatigue": 0.6221190468227883,
+      "urination_changes": 0.7286638929781608
+    },
+    "current_treatments": [
+      "Metoprolol Tartrate",
+      "Vancomycin",
+      "Furosemide"
+    ],
+    "treatment_effectiveness": 0.4263504259596241,
+    "estimated_treatment_cost": 7575.0,
+    "insurance_coverage": 0.8043947176899949,
+    "length_of_stay_prediction": 21.970842273365523,
+    "urgency_level": 2
+  },
+  {
+    "subject_id": 51353,
+    "age": 70,
+    "gender": 1,
+    "primary_diagnosis": "486",
+    "diagnosis_codes": [
+      "486"
+    ],
+    "severity_score": 2.0,
+    "mortality_risk": 0.1,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "cough": 0.5790202357414223,
+      "fever": 0.32426978432040793,
+      "shortness_of_breath": 0.3823391440861613,
+      "chest_pain": 0.34089034861043677,
+      "fatigue": 0.3754248790578708
+    },
+    "current_treatments": [
+      "Vancomycin HCl"
+    ],
+    "treatment_effectiveness": 0.5798218704082679,
+    "estimated_treatment_cost": 7550.0,
+    "insurance_coverage": 0.6980448376052316,
+    "length_of_stay_prediction": 17.90435113027161,
+    "urgency_level": 2
+  },
+  {
+    "subject_id": 64737,
+    "age": 72,
+    "gender": 0,
+    "primary_diagnosis": "51881",
+    "diagnosis_codes": [
+      "51881"
+    ],
+    "severity_score": 3.0,
+    "mortality_risk": 0.4,
+    "treatment_complexity": 1.0,
+    "symptoms": {
+      "pain": 0.3259534991021619,
+      "fatigue": 0.2606710573062885,
+      "discomfort": 0.21561477213944827,
+      "weakness": 0.29613437375168405,
+      "general_malaise": 0.29807534110858713
+    },
+    "current_treatments": [
+      "Calcium Gluconate",
+      "NS",
+      "Iso-Osmotic Dextrose"
+    ],
+    "treatment_effectiveness": 0.26564564590254436,
+    "estimated_treatment_cost": 7557.5,
+    "insurance_coverage": 0.95,
+    "length_of_stay_prediction": 25.940915378165908,
+    "urgency_level": 2
+  }
+]

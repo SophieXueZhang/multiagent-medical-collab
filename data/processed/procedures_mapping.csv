@@ -1,0 +1,165 @@
+icd9_code,short_title,long_title,frequency,estimated_cost,complexity_score,procedure_type
+3893,Venous cath NEC,"Venous catheterization, not elsewhere classified",56,500.0,1.0,catheter
+966,Entral infus nutrit sub,Enteral infusion of concentrated nutritional substances,32,500.0,1.0,other
+9904,Packed cell transfusion,Transfusion of packed cells,30,750.0,2.0,transfusion
+9604,Insert endotracheal tube,Insertion of endotracheal tube,22,500.0,1.0,other
+9671,Cont inv mec ven <96 hrs,Continuous invasive mechanical ventilation for less than 96 consecutive hours,21,500.0,1.0,other
+9672,Cont inv mec ven 96+ hrs,Continuous invasive mechanical ventilation for 96 consecutive hours or more,19,500.0,1.0,other
+9915,Parent infus nutrit sub,Parenteral infusion of concentrated nutritional substances,14,500.0,1.0,other
+5491,Percu abdominal drainage,Percutaneous abdominal drainage,12,500.0,1.0,other
+3324,Closed bronchial biopsy,Closed [endoscopic] biopsy of bronchus,10,500.0,1.0,other
+3891,Arterial catheterization,Arterial catheterization,10,2500.0,3.0,catheter
+3995,Hemodialysis,Hemodialysis,9,1500.0,2.0,other
+8856,Coronar arteriogr-2 cath,Coronary arteriography using two catheters,8,500.0,1.0,catheter
+3723,Rt/left heart card cath,Combined right and left heart cardiac catheterization,7,500.0,1.0,catheter
+9907,Serum transfusion NEC,Transfusion of other serum,6,750.0,2.0,transfusion
+3491,Thoracentesis,Thoracentesis,6,500.0,1.0,other
+4513,Sm bowel endoscopy NEC,Other endoscopy of small intestine,6,500.0,1.0,other
+331,Spinal tap,Spinal tap,5,500.0,1.0,other
+9905,Platelet transfusion,Transfusion of platelets,5,750.0,2.0,transfusion
+3895,Ven cath renal dialysis,Venous catheterization for renal dialysis,5,1500.0,2.0,catheter
+8872,Dx ultrasound-heart,Diagnostic ultrasound of heart,5,500.0,1.0,other
+17,Infusion of vasopressor,Infusion of vasopressor agent,4,750.0,1.0,other
+311,Temporary tracheostomy,Temporary tracheostomy,4,500.0,1.0,other
+3404,Insert intercostal cath,Insertion of intercostal catheter for drainage,4,500.0,1.0,catheter
+9605,Resp tract intubat NEC,Other intubation of respiratory tract,4,500.0,1.0,other
+9390,Non-invasive mech vent,Non-invasive mechanical ventilation,4,500.0,1.0,other
+9962,Heart countershock NEC,Other electric countershock of heart,3,500.0,1.0,other
+4233,Endosc destruc esoph les,Endoscopic excision or destruction of lesion or tissue of esophagus,3,500.0,1.0,other
+3612,Aortocor bypas-2 cor art,(Aorto)coronary bypass of two coronary arteries,3,500.0,1.0,other
+3961,Extracorporeal circulat,Extracorporeal circulation auxiliary to open heart surgery,3,500.0,1.0,other
+4399,Total gastrectomy NEC,Other total gastrectomy,3,500.0,1.0,other
+4311,Percu endosc gastrostomy,Percutaneous [endoscopic] gastrostomy [PEG],3,500.0,1.0,other
+9920,Inj/inf platelet inhibit,Injection or infusion of platelet inhibitor,3,500.0,1.0,other
+3990,Ins non-d-e non-cor stnt,Insertion of non-drug-eluting peripheral (non-coronary) vessel stent(s),3,500.0,1.0,other
+3897,CV cath plcmt w guidance,Central venous catheter placement with guidance,3,500.0,1.0,catheter
+3950,Angio oth non-coronary,Angioplasty of other non-coronary vessel(s),3,500.0,1.0,other
+4623,Permanent ileostomy NEC,Other permanent ileostomy,3,500.0,1.0,other
+3322,Fiber-optic bronchoscopy,Fiber-optic bronchoscopy,3,500.0,1.0,other
+9229,Radiotherapeut proc NEC,Other radiotherapeutic procedure,3,500.0,1.0,other
+3406,Thorac drain pleurl cav,Thoracoscopic drainage of pleural cavity,2,500.0,1.0,other
+118,Other brain dx procedure,Other diagnostic procedures on brain and cerebral meninges,2,500.0,1.0,other
+3932,Suture of vein,Suture of vein,2,500.0,1.0,other
+66,PTCA,Percutaneous transluminal coronary angioplasty [PTCA],2,500.0,1.0,other
+3606,Ins nondrug elut cor st,Insertion of non-drug-eluting coronary artery stent(s),2,500.0,1.0,other
+4131,Bone marrow biopsy,Biopsy of bone marrow,2,500.0,1.0,other
+3712,Pericardiotomy,Pericardiotomy,2,500.0,1.0,other
+8191,Arthrocentesis,Arthrocentesis,2,500.0,1.0,other
+40,Procedure-one vessel,Procedure on single vessel,2,500.0,1.0,other
+5412,Reopen recent lap site,Reopening of recent laparotomy site,2,500.0,1.0,other
+7935,Open reduc-int fix femur,"Open reduction of fracture with internal fixation, femur",2,500.0,1.0,other
+387,Interruption vena cava,Interruption of the vena cava,2,500.0,1.0,other
+8659,Skin closure NEC,Closure of skin and subcutaneous tissue of other sites,2,500.0,1.0,other
+45,Insert 1 vascular stent,Insertion of one vascular stent,2,500.0,1.0,other
+3323,Other bronchoscopy,Other bronchoscopy,2,500.0,1.0,other
+8914,Electroencephalogram,Electroencephalogram,2,500.0,1.0,other
+9929,Inject/infuse NEC,Injection or infusion of other therapeutic or prophylactic substance,2,500.0,1.0,other
+41,Procedure-two vessels,Procedure on two vessels,2,500.0,1.0,other
+8345,Other myectomy,Other myectomy,2,500.0,1.0,other
+9702,Replace gastrostomy tube,Replacement of gastrostomy tube,2,500.0,1.0,other
+4516,Egd with closed biopsy,Esophagogastroduodenoscopy [EGD] with closed biopsy,2,500.0,1.0,other
+3772,Int inser lead atri-vent,Initial insertion of transvenous leads [electrodes] into atrium and ventricle,2,500.0,1.0,other
+3783,Int insert dual-cham dev,Initial insertion of dual-chamber device,2,500.0,1.0,other
+14,Injection oxazolidinone,Injection or infusion of oxazolidinone class of antibiotics,2,500.0,1.0,other
+131,Incise cerebral meninges,Incision of cerebral meninges,2,500.0,1.0,other
+370,Pericardiocentesis,Pericardiocentesis,2,500.0,1.0,other
+8847,Contr abd arteriogrm NEC,Arteriography of other intra-abdominal arteries,2,500.0,1.0,other
+3615,1 int mam-cor art bypass,Single internal mammary-coronary artery bypass,2,500.0,1.0,other
+8841,Contr cerebr arteriogram,Arteriography of cerebral arteries,2,500.0,1.0,other
+8964,Pulmon art wedge monitor,Pulmonary artery wedge monitoring,2,500.0,1.0,other
+5011,Closed liver biopsy,Closed (percutaneous) [needle] biopsy of liver,2,500.0,1.0,other
+5110,Endosc retro cholangiopa,Endoscopic retrograde cholangiopancreatography [ERCP],2,500.0,1.0,other
+8852,Rt heart angiocardiogram,Angiocardiography of right heart structures,2,500.0,1.0,other
+151,Ex cereb meningeal les,Excision of lesion or tissue of cerebral meninges,1,500.0,1.0,other
+4011,Lymphatic struct biopsy,Biopsy of lymphatic structure,1,500.0,1.0,other
+3721,Rt heart cardiac cath,Right heart cardiac catheterization,1,500.0,1.0,catheter
+5795,Replace indwelling cath,Replacement of indwelling urinary catheter,1,500.0,1.0,catheter
+3422,Mediastinoscopy,Mediastinoscopy,1,500.0,1.0,other
+3492,Inject into thorax cavit,Injection into thoracic cavity,1,500.0,1.0,other
+4823,Rigid proctosigmoidoscpy,Rigid proctosigmoidoscopy,1,500.0,1.0,other
+3129,Other perm tracheostomy,Other permanent tracheostomy,1,500.0,1.0,other
+9921,Inject antibiotic,Injection of antibiotic,1,500.0,1.0,other
+3391,Bronchial dilation,Bronchial dilation,1,500.0,1.0,other
+4432,Percu gastrojejunostomy,Percutaneous [endoscopic] gastrojejunostomy,1,500.0,1.0,other
+243,Remove ventricle shunt,Removal of ventricular shunt,1,500.0,1.0,other
+9656,Bronch/trach lavage NEC,Other lavage of bronchus and trachea,1,500.0,1.0,other
+3605,Unknown procedure 3605,Unknown procedure code 3605,1,500.0,1.0,other
+5551,Nephroureterectomy,Nephroureterectomy,1,500.0,1.0,other
+403,Periph nerve div NEC,Division or crushing of other cranial and peripheral nerves,1,500.0,1.0,other
+5732,Cystoscopy NEC,Other cystoscopy,1,500.0,1.0,other
+3329,Bronch/lung dx proc NEC,Other diagnostic procedures on lung or bronchus,1,500.0,1.0,other
+5198,Oth perc proc bil trct,Other percutaneous procedures on biliary tract,1,500.0,1.0,other
+9462,Alcohol detoxification,Alcohol detoxification,1,500.0,1.0,other
+47,Insert 3 vascular stents,Insertion of three vascular stents,1,500.0,1.0,other
+4685,Dilation of intestine,Dilation of intestine,1,500.0,1.0,other
+3142,Larygnoscopy/tracheoscop,Laryngoscopy and other tracheoscopy,1,500.0,1.0,other
+8853,Lt heart angiocardiogram,Angiocardiography of left heart structures,1,500.0,1.0,other
+4223,Esophagoscopy NEC,Other esophagoscopy,1,500.0,1.0,other
+7869,Remove impl device NEC,"Removal of implanted devices from bone, other bones",1,500.0,1.0,other
+8151,Total hip replacement,Total hip replacement,1,500.0,1.0,other
+8848,Contrast arteriogram-leg,Arteriography of femoral and other lower extremity arteries,1,500.0,1.0,other
+3974,Endo rem obs hd/neck ves,Endovascular removal of obstruction from head and neck vessel(s),1,500.0,1.0,other
+392,Spinal canal inject NEC,Injection of other agent into spinal canal,1,500.0,1.0,other
+4319,Other gastrostomy,Other gastrostomy,1,500.0,1.0,other
+8607,Insert vasc access dev,Insertion of totally implantable vascular access device [VAD],1,500.0,1.0,other
+9925,Inject ca chemother NEC,Injection or infusion of cancer chemotherapeutic substance,1,500.0,1.0,other
+852,Blepharorrhaphy,Blepharorrhaphy,1,500.0,1.0,other
+4252,Thorac esophagogastrost,Intrathoracic esophagogastrostomy,1,500.0,1.0,other
+4582,Op tot intr-abd colectmy,Open total intra-abdominal colectomy,1,500.0,1.0,other
+4439,Gastroenterostomy NEC,Other gastroenterostomy without gastrectomy,1,500.0,1.0,other
+4613,Permanent colostomy,Permanent colostomy,1,500.0,1.0,other
+8605,Removal fb/dev from skin,Incision with removal of foreign body or device from skin and subcutaneous tissue,1,500.0,1.0,other
+9910,Inject/inf thrombo agent,Injection or infusion of thrombolytic agent,1,500.0,1.0,other
+13,Inject/infus nesiritide,Injection or infusion of nesiritide,1,500.0,1.0,other
+8960,Cnt intraart bld gas mon,Continuous intra-arterial blood gas monitoring,1,500.0,1.0,other
+8314,Fasciotomy,Fasciotomy,1,500.0,1.0,other
+7815,Applic ext fix dev-femur,"Application of external fixator device, femur",1,500.0,1.0,other
+8103,Ot cerv fusion post/post,"Other cervical fusion of the posterior column, posterior technique",1,500.0,1.0,other
+353,Vertebral fx repair,Repair of vertebral fracture,1,500.0,1.0,other
+8101,Atlas-axis fusion,Atlas-axis spinal fusion,1,500.0,1.0,other
+9626,Manual reduc rect prolap,Manual reduction of rectal prolapse,1,500.0,1.0,other
+3523,Opn/oth rep mtrl vlv-tis,Open and other replacement of mitral valve with tissue graft,1,500.0,1.0,other
+9909,Transfusion NEC,Transfusion of other substance,1,750.0,2.0,transfusion
+8181,Partial shoulder replace,Partial shoulder replacement,1,500.0,1.0,other
+46,Insert 2 vascular stents,Insertion of two vascular stents,1,500.0,1.0,other
+7931,Open red-int fix humerus,"Open reduction of fracture with internal fixation, humerus",1,500.0,1.0,other
+3726,Cath base invasv ep test,Catheter based invasive electrophysiologic testing,1,500.0,1.0,catheter
+3761,Pulsation balloon implan,Implant of pulsation balloon,1,500.0,1.0,other
+3607,Ins drug-elut coronry st,Insertion of drug-eluting coronary artery stent(s),1,500.0,1.0,other
+3601,Unknown procedure 3601,Unknown procedure code 3601,1,500.0,1.0,other
+3781,"Int insert 1-cham, non","Initial insertion of single-chamber device, not specified as rate responsive",1,500.0,1.0,other
+3771,Int insert lead in vent,Initial insertion of transvenous lead [electrode] into ventricle,1,500.0,1.0,other
+9749,Remov thor ther dev NEC,Removal of other device from thorax,1,500.0,1.0,other
+4542,Endo polpectomy lrge int,Endoscopic polypectomy of large intestine,1,500.0,1.0,other
+4524,Flexible sigmoidoscopy,Flexible sigmoidoscopy,1,500.0,1.0,other
+4525,Clos large bowel biopsy,Closed [endoscopic] biopsy of large intestine,1,500.0,1.0,other
+159,Oth extraoc mus-tend op,Other operations on extraocular muscles and tendons,1,500.0,1.0,other
+4674,Close sm bowel fist NEC,"Closure of fistula of small intestine, except duodenum",1,500.0,1.0,other
+8843,Contr pulmon arteriogram,Arteriography of pulmonary arteries,1,500.0,1.0,other
+7865,Remove imp device-femur,"Removal of implanted devices from bone, femur",1,500.0,1.0,other
+8162,Fus/refus 2-3 vertebrae,Fusion or refusion of 2-3 vertebrae,1,500.0,1.0,other
+7905,Cl fx reduc-femur,"Closed reduction of fracture without internal fixation, femur",1,500.0,1.0,other
+5151,Common duct exploration,Exploration of common duct,1,500.0,1.0,other
+3818,Lower limb endarterect,"Endarterectomy, lower limb arteries",1,500.0,1.0,other
+458,Unknown procedure 458,Unknown procedure code 458,1,500.0,1.0,other
+8849,Contrast arteriogram NEC,Arteriography of other specified sites,1,500.0,1.0,other
+8721,Contrast myelogram,Contrast myelogram,1,500.0,1.0,other
+9705,Repl stent in bile duct,Replacement of stent (tube) in biliary or pancreatic duct,1,500.0,1.0,other
+3942,Revis ren dialysis shunt,Revision of arteriovenous shunt for renal dialysis,1,1500.0,2.0,other
+4639,Enterostomy NEC,Other enterostomy,1,500.0,1.0,other
+4443,Endosc control gast hem,Endoscopic control of gastric or duodenal bleeding,1,500.0,1.0,other
+8754,Cholangiogram NEC,Other cholangiogram,1,500.0,1.0,other
+8753,Intraoper cholangiogram,Intraoperative cholangiogram,1,500.0,1.0,other
+5122,Cholecystectomy,Cholecystectomy,1,500.0,1.0,other
+9344,Other skeletal traction,Other skeletal traction,1,500.0,1.0,other
+9960,Cardiopulm resuscita NOS,"Cardiopulmonary resuscitation, not otherwise specified",1,500.0,1.0,other
+5061,Closure liver lacerat,Closure of laceration of liver,1,500.0,1.0,other
+93,Transplant cadaver donor,Transplant from cadaver,1,2500.0,5.0,other
+12,Adm inhal nitric oxide,Administration of inhaled nitric oxide,1,500.0,1.0,other
+3722,Left heart cardiac cath,Left heart cardiac catheterization,1,500.0,1.0,catheter
+5187,Endosc inser stent bile,Endoscopic insertion of stent (tube) into bile duct,1,500.0,1.0,other
+5012,Open liver biopsy,Open biopsy of liver,1,500.0,1.0,other
+3979,Oth endo proc oth vessel,Other endovascular procedures on other vessels,1,500.0,1.0,other
+3949,Vasc proc revision NEC,Other revision of vascular procedure,1,500.0,1.0,other
+5059,Liver transplant NEC,Other transplant of liver,1,2500.0,5.0,other
+9723,Replace trach tube,Replacement of tracheostomy tube,1,500.0,1.0,other

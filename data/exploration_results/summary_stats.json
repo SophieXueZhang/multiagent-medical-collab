@@ -1,0 +1,40 @@
+{
+  "patients": {
+    "total_patients": 100,
+    "gender_distribution": {
+      "F": 55,
+      "M": 45
+    },
+    "death_rate": 1.0
+  },
+  "admissions": {
+    "total_admissions": 129,
+    "admission_types": {
+      "EMERGENCY": 119,
+      "ELECTIVE": 8,
+      "URGENT": 2
+    },
+    "insurance_types": {
+      "Medicare": 98,
+      "Private": 24,
+      "Medicaid": 6,
+      "Government": 1
+    }
+  },
+  "diagnoses": {
+    "total_diagnoses": 1761,
+    "unique_icd_codes": 581,
+    "top_diagnoses": {
+      "4019": 53,
+      "42731": 48,
+      "5849": 45,
+      "4280": 39,
+      "25000": 31,
+      "51881": 31,
+      "2724": 29,
+      "5990": 27,
+      "486": 26,
+      "99592": 25
+    }
+  }
+}

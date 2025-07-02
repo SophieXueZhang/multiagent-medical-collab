@@ -1,0 +1,32 @@
+{
+  "insurance": [
+    "Government",
+    "Medicaid",
+    "Medicare",
+    "Private"
+  ],
+  "admission_type": [
+    "ELECTIVE",
+    "EMERGENCY",
+    "URGENT"
+  ],
+  "admission_location": [
+    "CLINIC REFERRAL/PREMATURE",
+    "EMERGENCY ROOM ADMIT",
+    "PHYS REFERRAL/NORMAL DELI",
+    "TRANSFER FROM HOSP/EXTRAM",
+    "TRANSFER FROM SKILLED NUR"
+  ],
+  "discharge_location": [
+    "DEAD/EXPIRED",
+    "DISCH-TRAN TO PSYCH HOSP",
+    "HOME",
+    "HOME HEALTH CARE",
+    "HOME WITH HOME IV PROVIDR",
+    "HOSPICE-HOME",
+    "ICF",
+    "LONG TERM CARE HOSPITAL",
+    "REHAB/DISTINCT PART HOSP",
+    "SNF"
+  ]
+}

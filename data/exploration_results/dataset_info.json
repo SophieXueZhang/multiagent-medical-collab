@@ -1,0 +1,362 @@
+{
+  "patients": {
+    "shape": [
+      100,
+      8
+    ],
+    "columns": [
+      "row_id",
+      "subject_id",
+      "gender",
+      "dob",
+      "dod",
+      "dod_hosp",
+      "dod_ssn",
+      "expire_flag"
+    ],
+    "dtypes": {
+      "row_id": "int64",
+      "subject_id": "int64",
+      "gender": "object",
+      "dob": "object",
+      "dod": "object",
+      "dod_hosp": "object",
+      "dod_ssn": "object",
+      "expire_flag": "int64"
+    },
+    "missing_values": {
+      "row_id": 0,
+      "subject_id": 0,
+      "gender": 0,
+      "dob": 0,
+      "dod": 0,
+      "dod_hosp": 30,
+      "dod_ssn": 23,
+      "expire_flag": 0
+    }
+  },
+  "admissions": {
+    "shape": [
+      129,
+      19
+    ],
+    "columns": [
+      "row_id",
+      "subject_id",
+      "hadm_id",
+      "admittime",
+      "dischtime",
+      "deathtime",
+      "admission_type",
+      "admission_location",
+      "discharge_location",
+      "insurance",
+      "language",
+      "religion",
+      "marital_status",
+      "ethnicity",
+      "edregtime",
+      "edouttime",
+      "diagnosis",
+      "hospital_expire_flag",
+      "has_chartevents_data"
+    ],
+    "dtypes": {
+      "row_id": "int64",
+      "subject_id": "int64",
+      "hadm_id": "int64",
+      "admittime": "object",
+      "dischtime": "object",
+      "deathtime": "object",
+      "admission_type": "object",
+      "admission_location": "object",
+      "discharge_location": "object",
+      "insurance": "object",
+      "language": "object",
+      "religion": "object",
+      "marital_status": "object",
+      "ethnicity": "object",
+      "edregtime": "object",
+      "edouttime": "object",
+      "diagnosis": "object",
+      "hospital_expire_flag": "int64",
+      "has_chartevents_data": "int64"
+    },
+    "missing_values": {
+      "row_id": 0,
+      "subject_id": 0,
+      "hadm_id": 0,
+      "admittime": 0,
+      "dischtime": 0,
+      "deathtime": 89,
+      "admission_type": 0,
+      "admission_location": 0,
+      "discharge_location": 0,
+      "insurance": 0,
+      "language": 48,
+      "religion": 1,
+      "marital_status": 16,
+      "ethnicity": 0,
+      "edregtime": 37,
+      "edouttime": 37,
+      "diagnosis": 0,
+      "hospital_expire_flag": 0,
+      "has_chartevents_data": 0
+    }
+  },
+  "diagnoses": {
+    "shape": [
+      1761,
+      5
+    ],
+    "columns": [
+      "row_id",
+      "subject_id",
+      "hadm_id",
+      "seq_num",
+      "icd9_code"
+    ],
+    "dtypes": {
+      "row_id": "int64",
+      "subject_id": "int64",
+      "hadm_id": "int64",
+      "seq_num": "int64",
+      "icd9_code": "object"
+    },
+    "missing_values": {
+      "row_id": 0,
+      "subject_id": 0,
+      "hadm_id": 0,
+      "seq_num": 0,
+      "icd9_code": 0
+    }
+  },
+  "prescriptions": {
+    "shape": [
+      10398,
+      19
+    ],
+    "columns": [
+      "row_id",
+      "subject_id",
+      "hadm_id",
+      "icustay_id",
+      "startdate",
+      "enddate",
+      "drug_type",
+      "drug",
+      "drug_name_poe",
+      "drug_name_generic",
+      "formulary_drug_cd",
+      "gsn",
+      "ndc",
+      "prod_strength",
+      "dose_val_rx",
+      "dose_unit_rx",
+      "form_val_disp",
+      "form_unit_disp",
+      "route"
+    ],
+    "dtypes": {
+      "row_id": "int64",
+      "subject_id": "int64",
+      "hadm_id": "int64",
+      "icustay_id": "float64",
+      "startdate": "object",
+      "enddate": "object",
+      "drug_type": "object",
+      "drug": "object",
+      "drug_name_poe": "object",
+      "drug_name_generic": "object",
+      "formulary_drug_cd": "object",
+      "gsn": "float64",
+      "ndc": "float64",
+      "prod_strength": "object",
+      "dose_val_rx": "object",
+      "dose_unit_rx": "object",
+      "form_val_disp": "object",
+      "form_unit_disp": "object",
+      "route": "object"
+    },
+    "missing_values": {
+      "row_id": 0,
+      "subject_id": 0,
+      "hadm_id": 0,
+      "icustay_id": 3352,
+      "startdate": 0,
+      "enddate": 1,
+      "drug_type": 0,
+      "drug": 0,
+      "drug_name_poe": 4632,
+      "drug_name_generic": 4626,
+      "formulary_drug_cd": 1,
+      "gsn": 1276,
+      "ndc": 1,
+      "prod_strength": 0,
+      "dose_val_rx": 0,
+      "dose_unit_rx": 0,
+      "form_val_disp": 0,
+      "form_unit_disp": 1,
+      "route": 0
+    }
+  },
+  "procedures": {
+    "shape": [
+      506,
+      5
+    ],
+    "columns": [
+      "row_id",
+      "subject_id",
+      "hadm_id",
+      "seq_num",
+      "icd9_code"
+    ],
+    "dtypes": {
+      "row_id": "int64",
+      "subject_id": "int64",
+      "hadm_id": "int64",
+      "seq_num": "int64",
+      "icd9_code": "int64"
+    },
+    "missing_values": {
+      "row_id": 0,
+      "subject_id": 0,
+      "hadm_id": 0,
+      "seq_num": 0,
+      "icd9_code": 0
+    }
+  },
+  "icustays": {
+    "shape": [
+      136,
+      12
+    ],
+    "columns": [
+      "row_id",
+      "subject_id",
+      "hadm_id",
+      "icustay_id",
+      "dbsource",
+      "first_careunit",
+      "last_careunit",
+      "first_wardid",
+      "last_wardid",
+      "intime",
+      "outtime",
+      "los"
+    ],
+    "dtypes": {
+      "row_id": "int64",
+      "subject_id": "int64",
+      "hadm_id": "int64",
+      "icustay_id": "int64",
+      "dbsource": "object",
+      "first_careunit": "object",
+      "last_careunit": "object",
+      "first_wardid": "int64",
+      "last_wardid": "int64",
+      "intime": "object",
+      "outtime": "object",
+      "los": "float64"
+    },
+    "missing_values": {
+      "row_id": 0,
+      "subject_id": 0,
+      "hadm_id": 0,
+      "icustay_id": 0,
+      "dbsource": 0,
+      "first_careunit": 0,
+      "last_careunit": 0,
+      "first_wardid": 0,
+      "last_wardid": 0,
+      "intime": 0,
+      "outtime": 0,
+      "los": 0
+    }
+  },
+  "d_icd_diagnoses": {
+    "shape": [
+      14567,
+      4
+    ],
+    "columns": [
+      "row_id",
+      "icd9_code",
+      "short_title",
+      "long_title"
+    ],
+    "dtypes": {
+      "row_id": "int64",
+      "icd9_code": "object",
+      "short_title": "object",
+      "long_title": "object"
+    },
+    "missing_values": {
+      "row_id": 0,
+      "icd9_code": 0,
+      "short_title": 0,
+      "long_title": 0
+    }
+  },
+  "d_icd_procedures": {
+    "shape": [
+      3882,
+      4
+    ],
+    "columns": [
+      "row_id",
+      "icd9_code",
+      "short_title",
+      "long_title"
+    ],
+    "dtypes": {
+      "row_id": "int64",
+      "icd9_code": "int64",
+      "short_title": "object",
+      "long_title": "object"
+    },
+    "missing_values": {
+      "row_id": 0,
+      "icd9_code": 0,
+      "short_title": 0,
+      "long_title": 0
+    }
+  },
+  "drgcodes": {
+    "shape": [
+      297,
+      8
+    ],
+    "columns": [
+      "row_id",
+      "subject_id",
+      "hadm_id",
+      "drg_type",
+      "drg_code",
+      "description",
+      "drg_severity",
+      "drg_mortality"
+    ],
+    "dtypes": {
+      "row_id": "int64",
+      "subject_id": "int64",
+      "hadm_id": "int64",
+      "drg_type": "object",
+      "drg_code": "int64",
+      "description": "object",
+      "drg_severity": "float64",
+      "drg_mortality": "float64"
+    },
+    "missing_values": {
+      "row_id": 0,
+      "subject_id": 0,
+      "hadm_id": 0,
+      "drg_type": 0,
+      "drg_code": 0,
+      "description": 0,
+      "drg_severity": 129,
+      "drg_mortality": 129
+    }
+  }
+}
