@@ -2,7 +2,7 @@ services:
   - type: web
     name: multiagent-healthcare-demo
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r requirements-cloud.txt
     startCommand: python web_demo/app.py
     envVars:
       - key: PYTHON_VERSION
