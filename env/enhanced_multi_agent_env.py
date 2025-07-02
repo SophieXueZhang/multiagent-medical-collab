@@ -82,12 +82,12 @@ class EnhancedMultiAgentHealthcareEnv(AECEnv):
             'total_reward': 0.0
         }
         
-        print("🏥 增强版多智能体医疗环境初始化完成")
+        print("🏥 Enhanced multi-agent healthcare environment initialization completed")
         if self.use_real_data:
-            print("   ✅ 使用真实MIMIC-III数据")
-            print("   ✅ 启用优化奖励函数")
+            print("   ✅ Using real MIMIC-III data")
+            print("   ✅ Optimized reward function enabled")
         else:
-            print("   ⚠️  使用模拟数据")
+            print("   ⚠️  Using simulated data")
     
     def _setup_spaces(self):
         """设置观察和动作空间"""
